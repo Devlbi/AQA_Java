@@ -3,7 +3,7 @@ package lesson7;
 public class MyMath {
 
     // 1. Факториал
-    public static long getFactorial(int n) {
+    public long getFactorial(int n) {
         if (n < 0) throw new IllegalArgumentException("Число должно быть >= 0");
         long res = 1;
         for (int i = 2; i <= n; i++) res *= i;
@@ -11,12 +11,12 @@ public class MyMath {
     }
 
     // 2. Площадь треугольника
-    public static double getTriangleArea(double base, double height) {
+    public double getTriangleArea(double base, double height) {
         return 0.5 * base * height;
     }
 
     // 3. Арифметика
-    public static double calculate(int a, int b, String op) {
+    public double calculate(int a, int b, String op) {
         return switch (op) {
             case "+" -> a + b;
             case "-" -> a - b;
@@ -30,7 +30,7 @@ public class MyMath {
     }
 
     // 4. Сравнение
-    public static String compareNumbers(int a, int b) {
+    public String compareNumbers(int a, int b) {
         if (a > b) return "больше";
         if (a < b) return "меньше";
         return "равны";
