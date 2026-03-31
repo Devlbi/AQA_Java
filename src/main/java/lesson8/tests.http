@@ -1,0 +1,63 @@
+### 1. GET Request
+GET https://postman-echo.com/get?foo1=bar1&foo2=bar2
+
+> {%
+    client.test("Status code is 200", () => client.assert(response.status === 200));
+    client.test("Args check", () => client.assert(response.body.args.foo1 === "bar1"));
+%}
+
+### 2. POST Raw Text
+POST https://postman-echo.com/post
+Content-Type: text/plain
+
+Hello World
+
+> {%
+    client.test("Status is 200", () => client.assert(response.status === 200));
+    client.test("Body check", () => client.assert(response.body.data.includes("Hello World")));
+%}
+
+### 3. POST Form Data
+POST https://postman-echo.com/post
+Content-Type: application/x-www-form-urlencoded
+
+foo1=bar1&foo2=bar2
+
+> {%
+    client.test("Status 200", () => client.assert(response.status === 200));
+    client.test("Form data check", () => client.assert(response.body.form.foo1 === "bar1"));
+%}
+
+### 4. PUT Request
+PUT https://postman-echo.com/put
+Content-Type: application/json
+
+{
+  "foo1": "bar1",
+  "foo2": "bar2"
+}
+
+> {%
+    client.test("Status 200", () => client.assert(response.status === 200));
+    client.test("JSON updated", () => client.assert(response.body.json.foo1 === "bar1"));
+%}
+
+### 5. PATCH Request
+PATCH https://postman-echo.com/patch
+Content-Type: application/json
+
+{
+  "foo1": "bar1"
+}
+
+> {%
+    client.test("Status 200", () => client.assert(response.status === 200));
+    client.test("Data patched", () => client.assert(response.body.json.foo1 === "bar1"));
+%}
+
+### 6. DELETE Request
+DELETE https://postman-echo.com/delete
+
+> {%
+    client.test("Status 200", () => client.assert(response.status === 200));
+%}
