@@ -1,0 +1,1 @@
+{"uuid":"4d9d4405-33a1-4d20-ad25-357c2f74c72f","name":"lesson11.MtsTests.setup","children":["61a84e5f-df4f-4e96-b2e0-7e01a9ca35c1"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1775444807323,"stop":1775444809470}],"afters":[],"start":1775444807322,"stop":1775444809470}
